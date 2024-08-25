@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Enhanced Form Validation</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="form-container p-5 shadow-lg rounded">
+      <h2 class="text-center mb-4">Registration Form</h2>
+      <form id="registrationForm" onsubmit="return validateForm()">
+        <div class="form-group position-relative">
+          <label for="fullName"><i class="fas fa-user icon"></i> Full Name</label>
+          <input type="text" class="form-control pl-5" id="fullName" placeholder="Enter full name" oninput="validateField('fullName')" required>
+          <small id="fullNameError" class="form-text text-danger"></small>
+        </div>
+
+        <div class="form-group position-relative">
+          <label for="email"><i class="fas fa-envelope icon"></i> Email ID</label>
+          <input type="email" class="form-control pl-5" id="email" placeholder="Enter email" oninput="validateField('email')" required>
+          <small id="emailError" class="form-text text-danger"></small>
+        </div>
+
+        <div class="form-group position-relative">
+          <label for="phone"><i class="fas fa-phone icon"></i> Phone Number</label>
+          <input type="text" class="form-control pl-5" id="phone" placeholder="Enter phone number" oninput="validateField('phone')" required>
+          <small id="phoneError" class="form-text text-danger"></small>
+        </div>
+
+        <div class="form-group position-relative">
+          <label for="password"><i class="fas fa-lock icon"></i> Password</label>
+          <input type="password" class="form-control pl-5" id="password" placeholder="Enter password" oninput="validateField('password')" required>
+          <small id="passwordError" class="form-text text-danger"></small>
+        </div>
+
+        <div class="form-group position-relative">
+          <label for="confirmPassword"><i class="fas fa-lock icon"></i> Confirm Password</label>
+          <input type="password" class="form-control pl-5" id="confirmPassword" placeholder="Confirm password" oninput="validateField('confirmPassword')" required>
+          <small id="confirmPasswordError" class="form-text text-danger"></small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
